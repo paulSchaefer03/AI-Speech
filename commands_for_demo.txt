@@ -1,0 +1,24 @@
+sudo apt update && sudo apt upgrade -y
+
+# Grundlegende Tools
+sudo apt install -y git ffmpeg python3 python3-pip python3-venv
+
+sudo apt install -y build-essential libsndfile1
+
+#Check
+nvidia-smi
+
+#If No
+sudo apt install nvidia-driver-535  # oder aktuelle verfügbare Version
+reboot
+
+#Phyton
+python3 -m venv asr_env
+source asr_env/bin/activate
+pip install --upgrade pip
+
+#Version for me 12.4
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+pip install gradio git+https://github.com/openai/whisper.git
+pip install transformers datasets
+pip install speechbrain
