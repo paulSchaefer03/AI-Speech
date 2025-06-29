@@ -5,11 +5,25 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend.transcription import transcribe
 
 
+        
 app = FastAPI(title="Medizinische ASR API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],  # oder ["*"] für dev
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://192.168.178.62:5173",
+        "http://100.113.90.99:5173",
+        "https://localhost:3000",
+        "https://localhost:5173",
+        "https://192.168.178.62:5173",
+        "https://100.113.90.99:5173",
+        "http://paul-schaefer-ms-7d75.tailf4012b.ts.net",
+        "http://paul-schaefer-ms-7d75.tailf4012b.ts.net:5173",
+        "https://paul-schaefer-ms-7d75.tailf4012b.ts.net",
+        "https://paul-schaefer-ms-7d75.tailf4012b.ts.net:5173",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

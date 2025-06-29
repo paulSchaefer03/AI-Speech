@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = "http://localhost:7860";
+const API_BASE = "https://paul-schaefer-ms-7d75.tailf4012b.ts.net/api";
 
 export async function getModels(): Promise<string[]> {
   const res = await axios.get(`${API_BASE}/api/models`);

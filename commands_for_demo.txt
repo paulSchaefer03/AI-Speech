@@ -22,3 +22,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 pip install gradio git+https://github.com/openai/whisper.git
 pip install transformers datasets
 pip install speechbrain
+
+
+#Tailscale
+sudo tailscale serve --bg http://localhost:5173

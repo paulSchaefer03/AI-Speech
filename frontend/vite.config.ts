@@ -6,6 +6,7 @@ import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const isTailscale = process.env.TAILSCALE === 'true';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -62,5 +63,17 @@ export default defineConfig({
       "@/types": path.resolve(__dirname, "src/types"),
       "@/utils": path.resolve(__dirname, "src/utils"),
     },
+  },
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    allowedHosts: ['paul-schaefer-ms-7d75.tailf4012b.ts.net'],
+    strictPort: true,
+    hmr: isTailscale
+      ? false
+      : {
+          host: 'localhost',
+          port: 5173,
+        },
   },
 });
