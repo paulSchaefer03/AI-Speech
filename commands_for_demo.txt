@@ -26,3 +26,6 @@ pip install speechbrain
 
 #Tailscale
 sudo tailscale serve --bg http://localhost:5173
+
+sudo tailscale serve --bg --set-path /api http://localhost:7860
+sudo tailscale serve --bg http://localhost:5173

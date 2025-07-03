@@ -30,3 +30,5 @@ backend/.pytest_cache
 backend/local_models
 backend/sb_model
 asr_env
+vosk-model-de-tuda-0.6-900k/
+vosk-model-de.zip

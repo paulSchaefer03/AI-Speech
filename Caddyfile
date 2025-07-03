@@ -1,0 +1,11 @@
+:8000
+
+# Proxy für Backend mit WebSocket
+handle_path /api/* {
+    reverse_proxy localhost:7860
+}
+
+# Proxy für Frontend
+handle {
+    reverse_proxy localhost:5173
+}

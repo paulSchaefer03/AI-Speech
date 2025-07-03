@@ -18,5 +18,5 @@ if __name__ == "__main__":
 
     # Optional: Warten, damit der Frontend-Server zuerst startet
     time.sleep(2)
-
+    subprocess.Popen(["caddy", "run"])
     run_backend()
